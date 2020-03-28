@@ -4,31 +4,94 @@
 
 Initializing git folder
     1. In CodingNomads folder, create new folder git_practice
+
+                MacBook-Pro:CodingNomads sarabornstein$ mkdir git_practice
+
     2. Inside git_practice:
         a. Initialize folder as a git folder (make sure you are in the correct folder when initializing) by running
             the "git init" command within the git_practice folder.
+
+                MacBook-Pro:git_practice sarabornstein$ git init
+                Initialized empty Git repository in /Users/sarabornstein/Documents/CodingNomads/git_practice/.git/
+
         b. Make new file
+
+                MacBook-Pro:git_practice sarabornstein$ touch gitPracticeFile.txt
+
         c. Add file
+
+                MacBook-Pro:git_practice sarabornstein$ git add gitPracticeFile.txt
+
         d. Commit file
+
+                MacBook-Pro:git_practice sarabornstein$ git commit -m "Committing file for Coding Nomads Fundamentals lab Exercise 2 #2d."
+
         c. On Github, create new git_practice repository
         d. Add this new GitHub repository as a new "remote" to your local Git repo. You can do this by using the command
             git remote add <ANY_NAME> <URL_OF_NEW_GITHUB_REPO.git>
+
+                git remote add origin https://github.com/SaraBornstein/git_practice.git
+
         d. Push commit file to Github
+
+                git push -u origin master
+
         e. Practice the following git flow until you feel comfortable:
             i.   Create or modify file
+
+                    MacBook-Pro:git_practice sarabornstein$ pwd
+                    /Users/sarabornstein/Documents/CodingNomads/git_practice
+                    MacBook-Pro:git_practice sarabornstein$ vim gitPracticeFile.txt
+                    MacBook-Pro:git_practice sarabornstein$ mv gitPracticeFile.txt gitPracticeFile1.txt
+                    MacBook-Pro:git_practice sarabornstein$ ls -al
+                    total 8
+                    drwxr-xr-x   4 sarabornstein  staff  128 Mar 27 15:00 .
+                    drwxr-xr-x  12 sarabornstein  staff  384 Mar 27 11:24 ..
+                    drwxr-xr-x  12 sarabornstein  staff  384 Mar 27 14:52 .git
+                    -rw-r--r--@  1 sarabornstein  staff  139 Mar 27 14:58 gitPracticeFile1.txt
+
             ii.  Add file(s)
+
+                    MacBook-Pro:git_practice sarabornstein$ touch gitPracticeFile2.txt
+
             iii. Commit file(s)
+
+                    MacBook-Pro:git_practice sarabornstein$ git commit -m "Adding 2 txt files to git_practice for Coding Nomads Fundamentals Exercise_02"
+                    [master 6dc1ad4] Adding 2 txt files to git_practice for Coding Nomads Fundamentals Exercise_02
+                     2 files changed, 1 insertion(+)
+                     create mode 100644 gitPracticeFile1.txt
+                     create mode 100644 gitPracticeFile2.txt
+
             iv.  Push file(s) to Github repository
+
+                    MacBook-Pro:git_practice sarabornstein$ git push
 
 Adding a remote
     1. Create new personal repository on Github named "git_practice_2".
     2. On local machine, add the new remote address to the same git repo you were working with in the previous section above
         (directions are provided on Github with new repo is created)
+
+            MacBook-Pro:git_practice sarabornstein$ git remote add gitPractice2 https://github.com/SaraBornstein/git_practice_2.git
+
     3. Push local git repository to your Github using the new remote.
+
+                MacBook-Pro:git_practice sarabornstein$ git push -u gitPractice2 master
 
 Cloning repository from Github
     1. Find a repository on Github
+
+            https://github.com/digilou/100-days-of-code-r3.git
+
     2. Clone repository to local machine
+
+            MacBook-Pro:git_practice sarabornstein$ git clone https://github.com/digilou/100-days-of-code-r3.git
+
     3. Create new repository on Github
     4. Add new remote on local machine
+
+            MacBook-Pro:100-days-of-code-r3 sarabornstein$ git remote add clonepractice https://github.com/SaraBornstein/ClonePractice.git
+
     5. Push to new Github repository
+
+          MacBook-Pro:100-days-of-code-r3 sarabornstein$ git push -u clonepractice master
+

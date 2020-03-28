@@ -2,21 +2,81 @@ Fundamentals Exercise 1: CLI
      Perform the following tasks using the CLI and copy and paste the commands and results below
 
      1. Navigate to CodingNomads folder (or the space you have create for this project)
+            MacBook-Pro:~ sarabornstein$ cd Documents/CodingNomads/
+
      2. Create new folder Terminal_testing
+            MacBook-Pro:CodingNomads sarabornstein$ mkdir Terminal_testing
+
      3. Inside of folder Terminal_testing,
          a. create 3 new .txt files all with different names
          b. print the directory path
          c. list the contents of the folder
+
+            MacBook-Pro:~ sarabornstein$ cd Documents/CodingNomads/Terminal_testing/
+            MacBook-Pro:Terminal_testing sarabornstein$ touch text1.txt text2.txt text3.txt
+            MacBook-Pro:Terminal_testing sarabornstein$ pwd
+            /Users/sarabornstein/Documents/CodingNomads/Terminal_testing
+            MacBook-Pro:Terminal_testing sarabornstein$ ls -al
+            total 0
+            drwxr-xr-x   5 sarabornstein  staff  160 Mar 27 10:44 .
+            drwxr-xr-x  11 sarabornstein  staff  352 Mar 27 10:33 ..
+            -rw-r--r--   1 sarabornstein  staff    0 Mar 27 10:44 text1.txt
+            -rw-r--r--   1 sarabornstein  staff    0 Mar 27 10:44 text2.txt
+            -rw-r--r--   1 sarabornstein  staff    0 Mar 27 10:44 text3.txt
+            MacBook-Pro:Terminal_testing sarabornstein$
+
      5. Inside of folder Terminal_testing, create a new folder
+            MacBook-Pro:Terminal_testing sarabornstein$ mkdir newFolder
+
      6. Copy a file from Terminal_testing to the new folder
+            MacBook-Pro:Terminal_testing sarabornstein$ cp text1.txt newFolder
+
      7. Move a different file from Terminal_testing to the new folder
+            MacBook-Pro:Terminal_testing sarabornstein$ mv text2.txt newFolder
+
+            MacBook-Pro:~ sarabornstein$ cd Documents/CodingNomads/Terminal_testing/newFolder/
+            MacBook-Pro:newFolder sarabornstein$ ls -al
+            total 0
+            drwxr-xr-x  4 sarabornstein  staff  128 Mar 27 10:48 .
+            drwxr-xr-x  6 sarabornstein  staff  192 Mar 27 10:48 ..
+            -rw-r--r--  1 sarabornstein  staff    0 Mar 27 10:46 text1.txt
+            -rw-r--r--  1 sarabornstein  staff    0 Mar 27 10:44 text2.txt
+
      8. Demonstrate removing:
          a. A file
+            MacBook-Pro:Terminal_testing sarabornstein$ rm text3.txt
+            MacBook-Pro:Terminal_testing sarabornstein$ ls -al
+            total 16
+            drwxr-xr-x   5 sarabornstein  staff   160 Mar 27 10:54 .
+            drwxr-xr-x  11 sarabornstein  staff   352 Mar 27 10:33 ..
+            -rw-r--r--@  1 sarabornstein  staff  6148 Mar 27 10:47 .DS_Store
+            drwxr-xr-x   4 sarabornstein  staff   128 Mar 27 10:48 newFolder
+            -rw-r--r--   1 sarabornstein  staff     0 Mar 27 10:44 text1.txt
+
          b. A folder
+            MacBook-Pro:Terminal_testing sarabornstein$ rm -r newFolder
+            MacBook-Pro:Terminal_testing sarabornstein$ ls -al
+            total 16
+            drwxr-xr-x   4 sarabornstein  staff   128 Mar 27 10:57 .
+            drwxr-xr-x  11 sarabornstein  staff   352 Mar 27 10:33 ..
+            -rw-r--r--@  1 sarabornstein  staff  6148 Mar 27 10:47 .DS_Store
+            -rw-r--r--   1 sarabornstein  staff     0 Mar 27 10:44 text1.txt
+
+
+
      9. CHALLENGE:
          a. Use $ vim to write some text inside a file
+            MacBook-Pro:Terminal_testing sarabornstein$ vim text1.txt
+
          b. Use $ cat print contents of file
+            MacBook-Pro:Terminal_testing sarabornstein$ cat text1.txt
+            This is text1.txt for CHALLENGE #9  in the Terminal_testing directory of Coding Nomads Fundamentals Exercise_01.
+
          c. Use $ grep to search for a word inside file
+            MacBook-Pro:Terminal_testing sarabornstein$ grep "CHALLENGE" text1.txt
+            This is text1.txt for CHALLENGE #9  in the Terminal_testing directory of Coding Nomads Fundamentals Exercise_01.
+            MacBook-Pro:Terminal_testing sarabornstein$ grep "Hello" in text1.txt
+            grep: in: No such file or directory
 
 Example Output (pwd):
     1. Cadens-MacBook-Pro:CodingNomads cadenmackenzie$ pwd
