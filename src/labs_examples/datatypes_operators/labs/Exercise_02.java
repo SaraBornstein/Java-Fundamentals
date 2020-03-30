@@ -23,7 +23,13 @@ public class Exercise_02 {
 
     public static void main(String[] args) {
 
-        // write code here
+        int a = 10;
+        double d = a;
+        System.out.println(d);
+
+        double e = 10.5;
+        int b = (int) e;
+        System.out.println(b); //information is lost when narrowing
 
     }
 }

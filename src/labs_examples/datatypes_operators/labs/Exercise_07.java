@@ -23,7 +23,9 @@ public class Exercise_07 {
         // assign input to variable as int
         int days = scanner.nextInt();
 
-        // write completed code here
+        int seconds = (((days * 24) * 60) * 60);
+        System.out.println(days + " days equals " + seconds + " seconds.");
+
 
     }
 }

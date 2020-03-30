@@ -12,7 +12,13 @@ public class Exercise_06 {
 
     public static void main(String[] args) {
 
-        // write code here
+        double r = 3.14;
+        int h = 5;
 
+        double V = Math.PI * Math.pow(r, 2) * h;
+        System.out.println("Volume = " + V);
+
+        double SA = (2 * Math.PI * r * h) + (2 * Math.PI * Math.pow(r, 2));
+        System.out.println("Surface Area = " + SA);
     }
 }
