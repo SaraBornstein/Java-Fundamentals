@@ -1,5 +1,8 @@
 package labs_examples.conditions_loops.labs;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+import org.w3c.dom.ls.LSOutput;
+
 /**
  * Conditions and Loops Exercise 6: Basic while loop
  *
@@ -8,4 +11,20 @@ package labs_examples.conditions_loops.labs;
  */
 
 public class Exercise_06 {
+
+    public static void main(String[] args) {
+        int sum = 0;
+        int number = 1;
+
+        while(number <=100)
+        {
+            number++;
+            sum = sum + number;
+
+        }
+        System.out.println(sum);
+    }
+
+
+
 }
