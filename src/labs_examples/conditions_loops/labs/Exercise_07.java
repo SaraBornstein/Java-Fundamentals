@@ -26,21 +26,19 @@ public class Exercise_07
 
         String str = scanner.nextLine();
 
-        if(str.indexOf("a") == 1){
-            System.out.println("The word is: " + str + ", and the first vowel is: a");
-        }
-        else if(str.indexOf("e") == 1){
-            System.out.println("The word is: " + str + " , and the first vowel is: e");
+        String vowels = "aeiou";
+
+        int length = str.length();
+        int count = 0;
+        while(count < length){
+            char c = str.charAt(count);
+            if(vowels.indexOf(c) != -1){
+                System.out.println("The first vowel in " +  str + " is " + c);
+                break;
+            }
+            count++;
         }
 
-       // for(int i = 0; i < str.length(); i++)
-      //  {
-            //while(str.charAt(i) == 'a')
-            //{
-              //  System.out.println("The word is: " + str + " , and the first vowel is: " + str.charAt(i));
-               // break;
-           // }
 
-        //}
     }
 }
