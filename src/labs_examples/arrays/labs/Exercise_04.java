@@ -8,6 +8,19 @@ package labs_examples.arrays.labs;
  *
  */
 
-public class Exercise_04 {
+public class Exercise_04
+{
+    public static void main(String[] args)
+    {
+        int[][] irrArr = { {2, 4, 6}, {8, 10},{1, 0, 11, 12} };
+
+        for(int[] outer : irrArr){
+            for(int val : outer){
+                System.out.print(val + " ");
+            }
+        }
+
+    }
+
 
 }
