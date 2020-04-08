@@ -9,7 +9,7 @@ class Example {
 
     public static void main(String[] args){
 
-        Engine myEngine = new Engine(400);
+        AirplaneExample.Engine myEngine = new AirplaneExample.Engine(400);
 
         Stereo myStereo = new Stereo("Panasonic");
 
@@ -65,7 +65,7 @@ class Stereo {
 
 class Car {
 
-    Engine engine;
+    AirplaneExample.Engine engine;
 
     Stereo stereo;
 
@@ -73,7 +73,7 @@ class Car {
 
     String color;
 
-    public Car(Engine engine, Stereo stereo, String model, String color){
+    public Car(AirplaneExample.Engine engine, Stereo stereo, String model, String color){
 
         this.engine = engine;
 
