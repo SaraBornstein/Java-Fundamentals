@@ -10,5 +10,8 @@ public class BearTouristController {
         Tourist tourists = new Tourist(100, "Cruise Ship");
 
         System.out.println(tourists.groupSize + " tourists have arrived by " + tourists.travelMeans + " to see the " + aBear.color + " bear in " + aBear.home);
+
+        System.out.println(aBear);
+        System.out.println(tourists);
     }
 }

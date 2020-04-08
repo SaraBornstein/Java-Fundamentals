@@ -65,10 +65,12 @@ public class AirplaneExample {
     public static class Captain {
         int yearsOfService;
 
+        //constructor
         public Captain(int yearsOfService) {
             this.yearsOfService = yearsOfService;
         }
 
+        //to string
         @Override
         public String toString() {
             return "Captain{" +
@@ -81,10 +83,11 @@ public class AirplaneExample {
     public static class Engine {
         double horsePower;
 
+        //constructor
         public Engine(double horsePower) {
             this.horsePower = horsePower;
         }
-
+        //to string
         @Override
         public String toString() {
             return "Engine{" +
@@ -99,12 +102,14 @@ public class AirplaneExample {
         int departureHour;
         int arrivalHour;
 
+        //constructor
         public FlightPath(String destination, int departureHour, int arrivalHour) {
             this.destination = destination;
             this.departureHour = departureHour;
             this.arrivalHour = arrivalHour;
         }
 
+        //to string
         @Override
         public String toString() {
             return "FlightPath{" +
@@ -120,11 +125,13 @@ public class AirplaneExample {
         boolean dinner;
         String snacks;
 
+        //constructor
         public Meals(boolean dinner, String snacks) {
             this.dinner = dinner;
             this.snacks = snacks;
         }
 
+        //to string
         @Override
         public String toString() {
             return "Meals{" +
