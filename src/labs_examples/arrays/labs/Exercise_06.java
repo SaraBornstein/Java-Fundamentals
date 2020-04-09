@@ -18,6 +18,7 @@ public class Exercise_06 {
         int[] nums = {45, 87, 62, 99, 1, 42, 12};
 
         int temp;
+        int MaxArrayPos = nums.length-1;
 
         // Question: in the for loop below, why do we divide "nums.length" by 2?
         for(int i = 0; i < nums.length / 2; i++){
@@ -26,14 +27,16 @@ public class Exercise_06 {
             // you've also got this "temp" variable you can use to hold a value temporarily
 
             temp = nums[i];
-            //int temp2 = nums[nums.length-1];
-            nums[i] = nums[nums.length-1];
 
-            nums[nums.length-1] = temp;
-            
+            nums[i] = nums[MaxArrayPos-i];
+            nums[MaxArrayPos-i] = temp;
 
-           // nums[i]= temp2;
-           // nums[nums.length-1] = temp;
+
+
+
+
+
+
 
 
 
