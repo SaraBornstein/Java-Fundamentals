@@ -1,5 +1,7 @@
 package labs_examples.objects_classes_methods.labs.objects;
 
+import labs_examples.objects_classes_methods.labs.objects.airplane.AirplaneExample;
+
 /**
  * Created by ryandesmond - https://codingnomads.co
  * /
@@ -9,7 +11,7 @@ class Example {
 
     public static void main(String[] args){
 
-        AirplaneExample.Engine myEngine = new AirplaneExample.Engine(400);
+        Engine myEngine = new Engine(400);
 
         Stereo myStereo = new Stereo("Panasonic");
 
@@ -65,7 +67,7 @@ class Stereo {
 
 class Car {
 
-    AirplaneExample.Engine engine;
+    Engine engine;
 
     Stereo stereo;
 
@@ -73,7 +75,7 @@ class Car {
 
     String color;
 
-    public Car(AirplaneExample.Engine engine, Stereo stereo, String model, String color){
+    public Car(Engine engine, Stereo stereo, String model, String color){
 
         this.engine = engine;
 
