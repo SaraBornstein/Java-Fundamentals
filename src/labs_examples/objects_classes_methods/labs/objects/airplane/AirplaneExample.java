@@ -17,7 +17,17 @@ public class AirplaneExample {
         AirplaneEngine myAirplaneEngine = myAirplaneEngine = new AirplaneEngine(400);
         Airplane myAirplane = new Airplane(food, myCaptain, vacation, myAirplaneEngine, 56.5, 25, 6, 4, "DeHaviland");
 
-        System.out.println(myAirplane.toString());
-        System.out.println(myAirplane.airplaneEngine.horsePower);
+        //invoke toString() methods:
+            System.out.println(myAirplane.toString());
+            System.out.println(food.toString());
+            System.out.println(myCaptain.toString());
+            System.out.println(vacation.toString());
+            System.out.println(myAirplaneEngine);
+
+        //Get/Set
+            System.out.println(myAirplane.getAirplaneEngine(myAirplaneEngine.getHorsePower()));
+            food.setSnacks("pretzels");
+            System.out.println("Snacks are now: " + food.getSnacks());
+            System.out.println(food.toString());
     }
 }

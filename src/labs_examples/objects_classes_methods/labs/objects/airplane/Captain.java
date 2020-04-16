@@ -2,10 +2,19 @@ package labs_examples.objects_classes_methods.labs.objects.airplane;
 
 //Captain Class
 public class Captain {
-    int yearsOfService;
+    private int yearsOfService;
 
     //constructor
     public Captain(int yearsOfService) {
+        this.yearsOfService = yearsOfService;
+    }
+
+    //getter & setter
+    public int getYearsOfService() {
+        return yearsOfService;
+    }
+
+    public void setYearsOfService(int yearsOfService) {
         this.yearsOfService = yearsOfService;
     }
 
