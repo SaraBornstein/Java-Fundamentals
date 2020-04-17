@@ -18,16 +18,16 @@ public class AirplaneExample {
         Airplane myAirplane = new Airplane(food, myCaptain, vacation, myAirplaneEngine, 56.5, 25, 6, 4, "DeHaviland");
 
         //invoke toString() methods:
-            System.out.println(myAirplane.toString());
-            System.out.println(food.toString());
-            System.out.println(myCaptain.toString());
-            System.out.println(vacation.toString());
-            System.out.println(myAirplaneEngine);
+        System.out.println(myAirplane.toString());
+        System.out.println(food.toString());
+        System.out.println(myCaptain.toString());
+        System.out.println(vacation.toString());
+        System.out.println(myAirplaneEngine);
 
-        //Get/Set
-            System.out.println(myAirplane.getAirplaneEngine(myAirplaneEngine.getHorsePower()));
-            food.setSnacks("pretzels");
-            System.out.println("Snacks are now: " + food.getSnacks());
-            System.out.println(food.toString());
+        //Get/Set TODO note here
+        System.out.println(myAirplane.getAirplaneEngine(myAirplaneEngine.getHorsePower()));
+        food.setSnacks("pretzels");
+        System.out.println("Snacks are now: " + food.getSnacks());
+        System.out.println(food.toString());
     }
 }
