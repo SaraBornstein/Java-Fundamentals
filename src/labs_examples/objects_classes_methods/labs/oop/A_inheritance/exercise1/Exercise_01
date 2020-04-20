@@ -4,6 +4,20 @@ A extends B, B extends C. Classes A, B, and C define an labs_examples.inheritanc
 labs_examples.inheritance hierarchy. For instance you could create an labs_examples.inheritance hiearchy using animals, or food, or the solar system,
 or stores, restaurants, adventures, and really anything else you can imagine. Have some fun with it. Try to challenge
 yourself.
+Class FictionalCharacter(boolean magical, Good or evil, book series,)
+    Class WizardWorldInhabitant(boolean limitedPowers, beingType, travel method("travel by broom"))
+        Class WizardStudent(wandType, petType, schoolHouse, travel by train and flying car)
+            Object Harry
+            Object Hermione
+            Object Ron
+        Class HogwartsProfessor(classSubject, travel by apparating and floo powder)
+            Object Dumbledore
+            Object McGonagall
+            Object Snape
+        Class MagicalCreature(String animalType, travel by wings)
+            Object Buckbeak
+            Object Headwig
+            Object Scabbers
 
 2) Once you've created this hierarchy, demonstrate the use of non-default constructors in the parent classes. Meaning,
 use the super(arg1, arg2, ...) command from a subclass to invoke a parameterized constructor in the parent class. Do this

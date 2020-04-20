@@ -3,7 +3,7 @@ package labs_examples.objects_classes_methods.labs.oop.A_inheritance;
 /**
  * Run the class below and study the output. What prints and why?
  *
- * Your answer:
+ * Your answer: 10 prints because a is an object of B, which inherits variables from A and 
  *
  */
 class A {
@@ -22,3 +22,4 @@ public class Exercise_02 {
         System.out.println(a.i);
     }
 }
+
