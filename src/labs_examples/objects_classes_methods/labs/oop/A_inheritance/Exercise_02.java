@@ -3,7 +3,7 @@ package labs_examples.objects_classes_methods.labs.oop.A_inheritance;
 /**
  * Run the class below and study the output. What prints and why?
  *
- * Your answer: 10 prints because a is an object of B, which inherits variables from A and 
+ * Your answer: 10 prints because a is an object of B, which inherits variables from A and a parent class is always printed first. There is no override method here.
  *
  */
 class A {

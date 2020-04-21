@@ -1,7 +1,10 @@
 
 Without running the code below, please tell me what will print. Why?
 
+"Parent called"
+"Child called"
 
+The parent is called and printed before a child class.
 
 
 public class InheritanceTest
