@@ -1,7 +1,4 @@
-package labs_examples.objects_classes_methods.labs.oop.B_polymorphism;
-
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
-import org.w3c.dom.ls.LSOutput;
+package labs_examples.objects_classes_methods.labs.oop.B_polymorphism.Exercise_01_01;
 
 /*
 1) Demonstrate Overriding
