@@ -19,23 +19,34 @@ this until both the user and the computer say "no" to another card, or until bot
 hand and hand value as well as the computers hand and hand value and indicate who won, or whether you both lost.
  */
 public class BlackjackController {
+
     public static void main(String[] args) {
+        BlackjackController controller = new BlackjackController(); //call non-static method from static method
+        controller.playBlackJack();
+    }
+
+    public void playBlackJack(){
+        // create scanner
+        Scanner scanner = new Scanner(System.in);
+
+        // prompt user
+        System.out.println("Please enter player name: ");
+
+        // assign input to variable
+        Player userPlayer = new Player(scanner.next()); //Take in user input and use to create player object
 
         //Create two Player objects. One should have the name of the user (that they enter through the console) and the other will be the computer player.
-        Player userPlayer = new Player("user", , 0);
-        Player computerPlayer = new Player( "computer", , 0);
+        Player computerPlayer = new Player("computer");
 
-        public void playBlackJack(){
-            // create scanner
-            Scanner scanner = new Scanner(System.in);
+        Deck deck = new Deck();
 
-            // prompt user
-            System.out.println("Please enter player name: ");
+        deck.deal(computerPlayer); //deals a card
+        deck.deal(userPlayer);
 
-            // assign input to variable
-            String userPlayerName = scanner.next();
-            userPlayer.setName(userPlayerName);
-
-        }
+        deck.deal(computerPlayer);
+        deck.deal(userPlayer);
+        System.out.println("Player hand: " + userPlayer.getHand().getHandValue());
+        System.out.println("Your cards are: " + userPlayer.getHand().toString());
+        System.out.println("Computer hand: " + computerPlayer.getHand().getHandValue());
     }
 }

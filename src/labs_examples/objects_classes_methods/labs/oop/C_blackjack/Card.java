@@ -5,26 +5,32 @@ package labs_examples.objects_classes_methods.labs.oop.C_blackjack;
         int cardValue;
  */
 public class Card {
-    char[] suit = new char[]{'♠', '♦', '♥', '♣'};
-    int cardValue;
+    private char suit;
+    private int cardValue;
 
     //constructor
-    public Card(char[] suit, int cardValue) {
+    public Card(char suit, int cardValue) {
         this.suit = suit;
         this.cardValue = cardValue;
     }
 
     //getter and setter
-    public char[] getSuit() {
+    public char getSuit() {
         return suit;
     }
 
-    public void setSuit(char[] suit) {
+    public void setSuit(char suit) {
         this.suit = suit;
     }
 
     public int getCardValue() {
-        return cardValue;
+        if(cardValue == 1){
+            return 11;
+        } else if(cardValue > 1 && cardValue < 10){
+            return cardValue;
+        } else {
+            return 10;
+        }
     }
 
     public void setCardValue(int cardValue) {
