@@ -4,7 +4,6 @@ Player.java (POJO - this will contain player info)
     String name;
     Hand hand;
     int potValue; (the amount of money they have)
-
  */
 public class Player {
     private String name;

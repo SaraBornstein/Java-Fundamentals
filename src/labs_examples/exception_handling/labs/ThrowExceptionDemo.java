@@ -15,7 +15,7 @@ public class ThrowExceptionDemo {
             System.out.println("This won't work because I said so.");
         }
     }
-    
+
     public static int divide() throws ArithmeticException{
             int x = 100 / 0;
             return x;

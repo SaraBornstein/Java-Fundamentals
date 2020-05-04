@@ -16,6 +16,7 @@ An ace is worth one, a 2 is worth two, a 3 is worth three, ... a jack is worth 1
 a king is worth 10.
      */
     public int getScore(){
+        handValue = 0;
         for(Card c : cards){
             handValue = handValue + c.getCardValue();
         }
@@ -33,19 +34,15 @@ value is less than 21
     }
 
     //getters and setters
-
     public ArrayList<Card> getCards() {
         return cards;
     }
-
     public void setCards(ArrayList<Card> cards) {
         this.cards = cards;
     }
-
     public int getHandValue() {
         return getScore();
     }
-
     public void setHandValue(int handValue) {
         this.handValue = handValue;
     }
@@ -57,9 +54,7 @@ value is less than 21
         for(Card c : cards){
             str = str + c.getCardValue() + c.getSuit();
         }
-        return "Hand{" +
-                "cards=" + str +
-                ", handValue=" + handValue +
-                '}';
+        return "your cards are: " + str +
+                ", your hand value is " + getScore();
     }
 }

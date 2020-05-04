@@ -2,6 +2,13 @@ package labs_examples.exception_handling.labs;
 
 import java.util.Scanner;
 
+/**
+ * Exception Handling Exercise 1:
+ *
+ *      1) Demonstrate a try/catch.
+ *
+ */
+
 public class TryCatchDemonstration {
 
     public static void main(String[] args) {

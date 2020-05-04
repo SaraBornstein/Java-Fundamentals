@@ -29,7 +29,7 @@ public class Deck {
         populateDeck();
     }
 
-    public void populateDeck() { //return type: array?
+    public void populateDeck() {
 
         int count = 0;
 

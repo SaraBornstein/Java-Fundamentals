@@ -23,6 +23,7 @@ public class Card {
         this.suit = suit;
     }
 
+    //J, Q, K == 10, A == 11 or 1
     public int getCardValue() {
         if(cardValue == 1){
             return 11;
