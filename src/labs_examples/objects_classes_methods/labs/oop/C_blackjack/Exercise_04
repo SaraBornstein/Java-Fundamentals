@@ -3,4 +3,10 @@ Make the BlackJack game we just created better. Add a way for the user and the c
 both an initial sum of "money" and let them play with it. Take actual bets. If either user runs out of money, stop the game.
 Consistently print out the current amount of money both the user and computer have after each game.
 
+The player should be allowed to bet after they get dealt the first two cards, then again after getting dealt each subsequent card
+-if they win, double their bet value and add it to their pot
+-if they lose, deduct that amount from their pot
+-make sure they don’t bet more than they have
+
+
 Any additional features you'd like to add? Go for it!
