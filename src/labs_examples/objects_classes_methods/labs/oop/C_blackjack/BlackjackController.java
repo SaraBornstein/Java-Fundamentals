@@ -107,6 +107,9 @@ system to track how many games have been won by the computer, and how many have 
         System.out.println("The computer's pot vlaue is $" + computerPlayer.getPotValue());
 
         System.out.print("Would you like to play again? (y/n)");
+        userPlayer.getHand().getCards().clear();
+        computerPlayer.getHand().getCards().clear();
+
         if(scanner.next().equals("y")) {
 
         }else{
