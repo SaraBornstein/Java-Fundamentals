@@ -18,16 +18,16 @@ class ShowFile3 {
 
         // The following code uses try-with resources to open a file
         // and then automatically close it when the try block is left.
-        try(FileInputStream fin = new FileInputStream(filePath)) {
+        try(FileInputStream fin = new FileInputStream(filePath)) { //try with resources: initializes and declares the resources we need
 
-            do {
+            do { //loop through if i does not = -1, print out next char
                 i = fin.read();
                 if(i != -1)
                     System.out.print((char) i);
-            } while(i != -1);
+            } while(i != -1); //continue looping if i does not equal -1 (the end of file)
 
         } catch(IOException exc) {
             System.out.println("I/O Error: " + exc);
         }
-    }
+    } //Don't need the finally with the nested try/catch blocks because the above will close the file when done automatically
 }

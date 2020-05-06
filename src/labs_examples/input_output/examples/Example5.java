@@ -14,7 +14,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-class CopyFile {
+class CopyFile { //copy a file and read it to another byte by byte
     public static void main(String args[]) throws IOException
     {
         int i;
@@ -31,25 +31,25 @@ class CopyFile {
             fin = new FileInputStream(fileReadPath);
             fout = new FileOutputStream(fileWritePath);
 
-            do {
-                i = fin.read();
+            do { //read write loop
+                i = fin.read(); //read a byte
                 if(i != -1)
                     if ((char) i == '.')
                         i = '!';
-                    fout.write(i);
-            } while(i != -1);
+                    fout.write(i); //write a byte
+            } while(i != -1); //as long as i does not = -1, meaning the end of the file
 
         } catch(IOException exc) {
             System.out.println("I/O Error: " + exc);
         } finally {
-            try {
+            try { //try catch to close input stream
                 if(fin != null) {
                     fin.close();
                 }
             } catch(IOException exc) {
                 System.out.println("Error Closing Input File");
             }
-            try {
+            try { //try catch to close output stream
                 if(fout != null) {
                     fout.close();
                 }

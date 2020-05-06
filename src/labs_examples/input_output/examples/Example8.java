@@ -17,10 +17,14 @@ class RWData {
         String filePath = "src/labs_examples/input_output/files/RWData.dat";
 
         // Write some values.
+        //first thing this will do is create DataOutputStream resource using the filePath.
         try (DataOutputStream dataOut =
                      new DataOutputStream(new FileOutputStream(filePath)))
         {
-            System.out.println("Writing " + i);
+            //the following statements (writing int, double, boolean, etc) are encoding java's data type information on to the data in the file
+            //the data file will not be human readable.
+
+            System.out.println("Writing " + i); //when this program prints to RWData.dat, here it will print out the number of each type of data it's writing and reading
             dataOut.writeInt(i);
 
             System.out.println("Writing " + d);
@@ -58,5 +62,5 @@ class RWData {
         catch(IOException exc) {
             System.out.println("Read error.");
         }
-    }
+    } //usually data just becomes a string, this will keep the original data types
 }

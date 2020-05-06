@@ -24,6 +24,7 @@ class CompFiles {
 
 
         // Compare the files.
+        //using try with resources: java will automatically open, close, and flush these resources so don't need finally block
         try (FileInputStream f1 = new FileInputStream(filePath1);
              FileInputStream f2 = new FileInputStream(filePath2))
         {
@@ -32,8 +33,8 @@ class CompFiles {
                 i = f1.read();
                 j = f2.read();
                 if(i != j)
-                    break;
-            } while(i != -1 && j != -1);
+                    break; //if files stop matching (byte by byte, if i doesn't = j) the loop will break and jump down to print "files differ"
+            } while(i != -1 && j != -1); //while both files have not reached end of loop, continue looping
 
             if(i != j)
                 System.out.println("Files differ.");

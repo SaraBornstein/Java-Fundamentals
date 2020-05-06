@@ -18,9 +18,10 @@ class ShowFile {
     public static void main(String args[])
     {
         String filePath = "src/labs_examples/input_output/files/byte_data";
-
+            //Usually your file path should start with User/... The above is a relative path.
         int i;
         FileInputStream fin;
+        //declare these variables outside try/catch so that this is accessible in multiple try blocks and the finally block so we can close file.
 
         try {
             fin = new FileInputStream(filePath);
@@ -42,7 +43,7 @@ class ShowFile {
         }
 
         try {
-            fin.close();
+            fin.close(); //if you don't close file properly you'll cause "memory leaks"
         } catch(IOException exc) {
             System.out.println("Error closing file.");
         }

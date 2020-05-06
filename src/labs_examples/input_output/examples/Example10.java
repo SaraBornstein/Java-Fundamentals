@@ -16,23 +16,24 @@ class RandomAccessDemo {
         String filePath = "src/labs_examples/input_output/files/random.dat";
 
         // Open and use a random access file.
-        try (RandomAccessFile raf = new RandomAccessFile(filePath, "rw"))
+        //unusual to access files at a random location
+        try (RandomAccessFile raf = new RandomAccessFile(filePath, "rw")) //setting mode to read/write
         {
-            // Write values to the file.
+            // Write values to the file. The data is from the array above (dara[])
             for(int i=0; i < data.length; i++) {
                 raf.writeDouble(data[i]);
             }
 
             // Now, read back specific values
-            raf.seek(0); // seek to first double
+            raf.seek(0); // seek to first double (at 0 bytes)
             d = raf.readDouble();
             System.out.println("First value is " + d);
 
-            raf.seek(8); // seek to second double
+            raf.seek(8); // seek to second double (at the 8th byte)
             d = raf.readDouble();
             System.out.println("Second value is " + d);
 
-            raf.seek(8 * 3); // seek to fourth double
+            raf.seek(8 * 3); // seek to fourth double (at the 24th byte)
             d = raf.readDouble();
             System.out.println("Fourth value is " + d);
 

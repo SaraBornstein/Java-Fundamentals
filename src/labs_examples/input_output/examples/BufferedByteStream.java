@@ -7,7 +7,7 @@ import java.io.IOException;
 /**
  * Created by ryandesmond - https://codingnomads.co
  */
-public class BufferedByteStream {
+public class BufferedByteStream { //a buffer holds more than one thing (will read/write a collection of bytes)
 
     public static void main(String[] args) {
 
@@ -19,11 +19,12 @@ public class BufferedByteStream {
         String filePath = "src/labs_examples/input_output/files/char_data.txt";
 
         try {
-
+//you create your inputStream and pass it into a BufferedInput Stream as an argument
+            //the buffer will input multiple bytes and process them all at the same tome
             bufferedInputStream = new BufferedInputStream(new FileInputStream(filePath));
 
             // this will hold the collection of bytes that we read at once
-            byte[] buffer = new byte[8];
+            byte[] buffer = new byte[8]; //creating the buffer
             int bytesRead = 0;
 
             // this while loop will read the file 5 bytes at a time
