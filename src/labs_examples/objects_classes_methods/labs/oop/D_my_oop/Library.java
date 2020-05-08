@@ -3,10 +3,21 @@ package labs_examples.objects_classes_methods.labs.oop.D_my_oop;
 import java.util.ArrayList;
 
 public class Library {
-    Book book = new Book();
-    ArrayList <Integer> books = new ArrayList<>();
-    int count = 0;
+    private ArrayList <Book> bookshelf = new ArrayList<>();
 
-    public void populateLibrary(){
+    //getters and setters
+    public ArrayList<Book> getBookshelf() {
+        return bookshelf;
     }
+
+    public void setBookshelf(ArrayList<Book> bookshelf) {
+        this.bookshelf = bookshelf;
+    }
+
+    public void printBookshelf(){
+        for(Book b : bookshelf){
+            System.out.println(b.toString());
+        }
+    }
+
 }

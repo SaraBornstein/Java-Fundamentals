@@ -9,7 +9,6 @@ public class BlackjackController {
         controller.playBlackJack();
     }
 
-    public void playBlackJack(){
 /*
 BlackjackController.java (this will contain the main())
 1) In the BlackJackController, create a method named playBlackJack(). This method will interact with the user by printing
@@ -38,6 +37,7 @@ static_nonstatic Exercise_02:
 Create a system that will track the total number of BlackJack games that have been played. As well as a
 system to track how many games have been won by the computer, and how many have been won by the player.
  */
+public void playBlackJack(){
         Scanner scanner = new Scanner(System.in); // create scanner
 
         System.out.print("Please enter player name: "); // prompt user for player name input
@@ -53,7 +53,7 @@ system to track how many games have been won by the computer, and how many have 
         int totalGamesPlayed = 0;
 
         boolean play =  true;
-        
+
         //Start each player with $10
         userPlayer.setPotValue(10);
         computerPlayer.setPotValue(10);
@@ -110,6 +110,7 @@ system to track how many games have been won by the computer, and how many have 
                 } else if(computerPlayer.getHand().getHandValue() == 21){
                     break;
                 } else {
+                    //computer doesn't bet.
                     System.out.print("Please place your next bet: ");
                     computerBet = scanner.nextInt() + computerBet;
                 }
@@ -143,7 +144,7 @@ system to track how many games have been won by the computer, and how many have 
 
         System.out.println(userPlayer.getName() + ", your pot value is $" + userPlayer.getPotValue());
         System.out.println("The computer's pot vlaue is $" + computerPlayer.getPotValue());
-        if(userPlayer.getPotValue() <= 0 || computerPlayer.getPotValue() <=0){
+        if(userPlayer.getPotValue() <= 0 || computerPlayer.getPotValue() <= 0){
             System.out.println("GAME OVER");
             return;
         }
