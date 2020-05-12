@@ -1,67 +1,72 @@
 package labs_examples.input_output.labs;
 /*
- BufferedReader in = new BufferedReader(new FileReader("foo.in"));
-
- do {
- i = fin.read();
- if(i != -1)
- if ((char) i == 'a')
- i = '-';
- if ((char) i == 'e')
- i = '~';
- fout.write(i);
- } while(i != -1);
+ * Input/Output Exercise 2: File encryption
+ *      -Using the BufferedReader, read a file character by character and write an encrypted version to a new file.
+ *      -For example, change every 'a' to '-' and every 'e' to '~' .
+ *      -Make sure you close the connections to both files.
+ *
+ *      Then, read back the encrypted file using the BufferedReader and
+ *      print out the unencrypted version. Does it match the original file?
+ *
 */
 
 import java.io.*;
 
 public class FileEncriptionExample {
+
     public static void main(String[] args) {
+        String filePath = "src/labs_examples/input_output/labs/char_data_rewrite.txt";
+        String readFilePath = "src/labs_examples/input_output/labs/char_data_rewrite_encrypt.txt";
+        encriptFile(filePath);
+        unencriptFile(readFilePath);
+    }
 
-        FileInputStream fin = null;
-        FileOutputStream fout = null;
-        BufferedReader brin = null;
-
-        String filePath = "src/labs_examples/input_output/files/char_data_rewrite.txt";
+    public static void encriptFile(String filePath){
         String fileWritePath = "src/labs_examples/input_output/labs/char_data_rewrite_encrypt.txt";
 
-        try {
-            brin = new BufferedReader(new FileReader(filePath));
-            fout = new FileOutputStream(fileWritePath);
-            byte[] buffer = new byte[1];
-            int bytesRead = 0;
-            int i = brin.read();
+        try
+            (BufferedReader br = new BufferedReader(new FileReader(filePath));
+            FileWriter fr = new FileWriter(fileWritePath)){
+
+            int i;
 
             do {
+                i = br.read();
                 if(i != -1)
                     if ((char) i == 'a')
                         i = '-';
                 if ((char) i == 'e')
                     i = '~';
-                fout.write(i);
+                fr.write((char) i);
+
             } while(i != -1);
 
-            while ((bytesRead = brin.read(buffer)) != -1) {
-                fout.write(buffer, 0, bytesRead);
-            }
-        } catch (FileNotFoundException exc) {
-            exc.printStackTrace();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } finally {
-            try {
-                //fin.close();
-                if(fin != null) {
-                    fin.close();
-                }
-                bin.close();
-                if(fout != null) {
-                    fout.close();
-                }
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
+        }catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
-}
+
+    public static void unencriptFile(String filePath){
+        try(BufferedReader br = new BufferedReader(new FileReader(filePath))){
+            int i;
+
+            do {
+                i = br.read();
+                if(i != -1)
+                    if ((char) i == '-')
+                        i = 'a';
+                if ((char) i == '~')
+                    i = 'e';
+                System.out.print((char) i);
+            } while(i != -1);
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
