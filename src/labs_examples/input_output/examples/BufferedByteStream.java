@@ -2,6 +2,7 @@ package labs_examples.input_output.examples;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
@@ -22,6 +23,7 @@ public class BufferedByteStream { //a buffer holds more than one thing (will rea
 //you create your inputStream and pass it into a BufferedInput Stream as an argument
             //the buffer will input multiple bytes and process them all at the same tome
             bufferedInputStream = new BufferedInputStream(new FileInputStream(filePath));
+
 
             // this will hold the collection of bytes that we read at once
             byte[] buffer = new byte[8]; //creating the buffer

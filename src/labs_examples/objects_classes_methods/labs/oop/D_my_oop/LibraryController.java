@@ -5,10 +5,14 @@ import java.util.Scanner;
 public class LibraryController {
     public static void main(String[] args) {
         Library library = new Library();
-        library.getBookshelf().add(getNewBookFromUser());
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Would you like to add a book? (y/n)");
+        while(scanner.next().equalsIgnoreCase("y")){
+            library.getBookshelf().add(getNewBookFromUser());
+        }
+
         library.printBookshelf();
         System.out.println("Number of books: " + library.getBookshelf().size());
-
     }
 
     public static Book getNewBookFromUser(){
