@@ -71,8 +71,8 @@ public void playBlackJack(){
         int userBet = scanner.nextInt();
 
         System.out.println("The Computer's hand value is " + computerPlayer.getHand().getHandValue() + " and starting pot value is $" + computerPlayer.getPotValue());
-        System.out.print("Computer, enter your bet: ");
-        int computerBet = scanner.nextInt();
+        //System.out.print("Computer, enter your bet: ");
+        //int computerBet = scanner.nextInt();
 
         while (userPlayer.getHand().greaterThan21() == false && computerPlayer.getHand().greaterThan21() == false) {
 
@@ -96,48 +96,48 @@ public void playBlackJack(){
                 System.out.println(userPlayer.getName() + ", " + userPlayer.getHand().toString());
             }
 
+            /*
             //ask computerPlayer if they want another card
             System.out.print(computerPlayer.getName() + ", would you like another card? (y/n): ");
             boolean computerHitMe = scanner.next().equals("y");
             if(computerHitMe) {
                 deck.deal(computerPlayer);
                 System.out.println("Computer, " + computerPlayer.getHand().toString());
-
+            */
+            if(computerPlayer.computerAI(computerPlayer)) {
+                deck.deal(computerPlayer);
+                System.out.println("Computer, " + computerPlayer.getHand().toString());
 
                 if(computerPlayer.getHand().getHandValue() > 21) {
                     System.out.println("The computer busted. It's hand value is over 21.");
                     break;
                 } else if(computerPlayer.getHand().getHandValue() == 21){
                     break;
-                } else {
-                    //computer doesn't bet.
-                    System.out.print("Please place your next bet: ");
-                    computerBet = scanner.nextInt() + computerBet;
                 }
             }else{
                 System.out.println("Computer, " + computerPlayer.getHand().toString());
             }
-            if(!userHitMe && !computerHitMe)
+            if(!userHitMe && (computerPlayer.computerAI(computerPlayer) == false))
                 break;
         }
 
         if(computerPlayer.getHand().getHandValue() < userPlayer.getHand().getScore() && userPlayer.getHand().getScore() <= 21 || computerPlayer.getHand().getHandValue() > 21){
             userPlayer.setPotValue(userPlayer.getPotValue() + userBet);
-            computerPlayer.setPotValue(computerPlayer.getPotValue() - computerBet);
+            computerPlayer.setPotValue(computerPlayer.getPotValue());
             System.out.println(userPlayer.getName() + ", you win! Your pot value is $" + userPlayer.getPotValue());
             userWin++;
             totalGamesPlayed++;
         } else if(computerPlayer.getHand().getHandValue() == 21 && userPlayer.getHand().getScore() == 21){
             System.out.println("You tied!");
             userPlayer.setPotValue(userPlayer.getPotValue() + userBet);
-            computerPlayer.setPotValue(computerPlayer.getPotValue() + computerBet);
+            computerPlayer.setPotValue(computerPlayer.getPotValue());
             System.out.println(userPlayer.getName() + ", your pot value is $" + userPlayer.getPotValue());
             System.out.println("The computer's pot vlaue is $" + computerPlayer.getPotValue());
             totalGamesPlayed++;
         }else{
             System.out.println("You lose to the computer.");
             userPlayer.setPotValue(userPlayer.getPotValue() - userBet);
-            computerPlayer.setPotValue(computerPlayer.getPotValue() + computerBet);
+            computerPlayer.setPotValue(computerPlayer.getPotValue());
             computerWin++;
             totalGamesPlayed++;
         }
