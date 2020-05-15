@@ -4,11 +4,8 @@ import java.io.*;
 
 /**
  * Input/Output Exercise 1: File input/output
- *
  *      Using the BufferedInputStream, read a text file 5 bytes at a time and write each byte to a new file.
  *      Make sure you close the connections to both files.
- *
- *
  */
 
 class Example {
@@ -41,6 +38,7 @@ class Example {
                     fin.close();
                 }
                 bin.close();
+
                 if(fout != null) {
                     fout.close();
                 }

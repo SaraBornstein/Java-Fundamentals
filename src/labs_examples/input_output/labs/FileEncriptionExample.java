@@ -32,13 +32,13 @@ public class FileEncriptionExample {
 
             do {
                 i = br.read();
-                if(i != -1)
+                if (i != -1) {
                     if ((char) i == 'a')
                         i = '-';
-                if ((char) i == 'e')
-                    i = '~';
-                fr.write((char) i);
-
+                    else if ((char) i == 'e')
+                        i = '~';
+                    fr.write((char) i);
+                }
             } while(i != -1);
 
         }catch (FileNotFoundException e) {
