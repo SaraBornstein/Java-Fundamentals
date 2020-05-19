@@ -1,4 +1,4 @@
-package labs_examples.input_output.labs;
+package labs_examples.input_output.labs.Exercise_04;
 
 //Flower POJO
 public class Flower {

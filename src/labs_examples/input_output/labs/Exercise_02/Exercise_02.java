@@ -1,4 +1,4 @@
-package labs_examples.input_output.labs;
+package labs_examples.input_output.labs.Exercise_02;
 
 /**
  * Input/Output Exercise 2: File encryption
