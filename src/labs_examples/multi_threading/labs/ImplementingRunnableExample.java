@@ -3,7 +3,9 @@ package labs_examples.multi_threading.labs;
 public class ImplementingRunnableExample implements Runnable {
     public static void main(String[] args) {
         ImplementingRunnableExample example1 = new ImplementingRunnableExample("Thread 1");
+        example1.thread.setPriority(1);
         new Thread(new ImplementingRunnableExample(), "Thread 2").start();
+        Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
 
     }
 
