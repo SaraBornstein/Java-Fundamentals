@@ -11,12 +11,11 @@ import java.util.ArrayList;
 
 class GenericExerciseTwo {
 
-    public static <T extends Number> Number T (ArrayList<? extends Number> arr){
+    public static <T extends Number> int T (ArrayList<? extends Number> arr){
         Number sum = 0;
         for(Number elem : arr){
-            //sum = sum + elem;
+            sum = sum.intValue() + elem.intValue();
         }
-        return sum;
-
+        return sum.intValue();
     }
 }
