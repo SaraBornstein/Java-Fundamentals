@@ -1,6 +1,11 @@
 package labs_examples.generics.labs;
 
+import com.sun.deploy.security.SelectableSecurityManager;
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Generics Exercise 3:
@@ -18,18 +23,21 @@ import java.util.ArrayList;
 class GenericExerciseThree {
     public static void main(String[] args) {
         //1
-        System.out.println(addition(3.4, 5f));
+        System.out.println("#1: " + addition(3.4, 5f));
 
         //2
         ArrayList<String> strArr = new ArrayList();
         strArr.add("Hello");
         strArr.add("Goodbye");
         strArr.add("toot");
+        System.out.print("#2: ");
         palindromeCount(strArr);
 
         //3
-        int[] arr = {1, 2, 3, 4, 5};
-        //changePositions(Integer[] arr);
+        Double[] arr = {1.2, 2.3, 3.2, 4.3, 5.2};
+        System.out.print("#3: ");
+        System.out.println(Arrays.toString(arr));
+        changePositions(arr);
 
         //4
         ArrayList<Integer> intArr = new ArrayList();
@@ -38,7 +46,7 @@ class GenericExerciseThree {
         intArr.add(3);
         intArr.add(4);
         intArr.add(5);
-        //maxOfRange(intArr);
+        System.out.println("#4: The largest element of the array is " + largestElem(intArr));
 
     }
     //1
@@ -64,26 +72,22 @@ class GenericExerciseThree {
         System.out.println(count);
     }
 
-    //3 Write a generic method to exchange the positions of two different elements in an array. TODO
-    public static <P> void changePositions(P[] parr){
-        P first = parr[0];
-        P last = parr[parr.length-1];
-
-        for(int i = 0; i < parr.length; i++){
-
-        }
+    //3 Write a generic method to exchange the positions of two different elements in an array.
+    public static <P> void changePositions(P[] anArray){
+        P temp = anArray[0];
+        anArray[0] = anArray[1];
+        anArray[1] = temp;
+        System.out.println(Arrays.toString(anArray));
     }
 
+
     //4 Write a generic method to find the largest element within the range (begin, end) of a list.
-/*    public static <V extends Number> V maxOfRange (ArrayList<V> range){
-
-        V max = null;
+    public static <V extends Number> int largestElem (ArrayList<V> range){
+        int max = 0;
         for(V elem : range){
-            if(max < elem){
-                max = elem;
-            }
-        }
-        return max;
+            if(elem.doubleValue() > max)
+                max = elem.intValue();
+        } return max;
 
-    }*/
+    }
 }

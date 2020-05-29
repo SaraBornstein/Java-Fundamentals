@@ -18,7 +18,6 @@ class GenericClassExample <T>{
         obj2.print();
         obj3.print();
 
-
     }
 
     //2 instance variables

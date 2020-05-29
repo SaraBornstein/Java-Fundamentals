@@ -11,11 +11,19 @@ import java.util.ArrayList;
 
 class GenericExerciseTwo {
 
-    public static <T extends Number> int T (ArrayList<? extends Number> arr){
+    public static <T extends Number> double adding (ArrayList<? extends Number> arr){
         Number sum = 0;
         for(Number elem : arr){
-            sum = sum.intValue() + elem.intValue();
+            sum = sum.doubleValue() + elem.doubleValue();
         }
-        return sum.intValue();
+        return sum.doubleValue();
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Float> arr = new ArrayList();
+        arr.add(1.4f);
+        arr.add(2.3f);
+        arr.add(3.4f);
+        System.out.println(adding(arr));
     }
 }
