@@ -1,5 +1,7 @@
 package labs_examples.enumerations.labs;
 
+import java.util.Arrays;
+
 /**
  * Enumerations Exercise 1:
  *
@@ -8,3 +10,33 @@ package labs_examples.enumerations.labs;
  *      of this enum from a seperate class.
  */
 
+enum Podcast {
+    FREECODECAMP(45),
+    BASECS(20),
+    CODENEWBIE(30),
+    LEARNTOCODE(15);
+
+    private int lengthMin;
+
+    Podcast(int lengthMin) {
+        this.lengthMin = lengthMin;
+    }
+
+    public int getLengthMin() {
+        return lengthMin;
+    }
+
+    public void setLengthMin(int lengthMin) {
+        this.lengthMin = lengthMin;
+    }
+}
+
+class EnumController {
+    public static void main(String[] args) {
+        for(Podcast pod : Podcast.values()){
+            System.out.println(pod + " is " + pod.getLengthMin() + " minutes long.");
+
+        }
+
+    }
+}
