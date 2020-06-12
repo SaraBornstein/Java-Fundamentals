@@ -1,6 +1,7 @@
 package labs_examples.lambdas.labs;
 
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 /**
  * Lambdas Exercise 3:
@@ -13,17 +14,28 @@ class ExerciseThree{
 // 1) Demonstrate the use of a static method reference (Class::staticMethod)
         Function<Integer,Integer> obj1 = DoSomething :: printAnInt;
         int x = obj1.apply(5);
-        System.out.println(x);
+        System.out.println("Static Method Reference: " + x);
 
-// 2) Demonstrate the use of an instance method reference (ObjectType::instanceMethod)
+// 2) Demonstrate the use of an instance method reference (obj::instanceMethod)
+        NonStaticDoSomething HelloObject = new NonStaticDoSomething();
+        Supplier s = HelloObject::sayHello;
+        System.out.println("Instance method reference: " + s.get());
 
-
+//3) Demonstrate the use of a constructor reference
+        //Supplier sup = DoSomething::new;
     }
 }
 
 class DoSomething{
     public static Integer printAnInt (int t) {
         return t + 2;
+    }
+
+}
+
+class NonStaticDoSomething{
+    public String sayHello(){
+        return "Hello";
     }
 }
 
