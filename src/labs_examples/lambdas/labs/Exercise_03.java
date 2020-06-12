@@ -22,7 +22,10 @@ class ExerciseThree{
         System.out.println("Instance method reference: " + s.get());
 
 //3) Demonstrate the use of a constructor reference
-        //Supplier sup = DoSomething::new;
+    Supplier sup = Dog::new;
+    System.out.println(sup.get());
+
+
     }
 }
 
@@ -39,5 +42,15 @@ class NonStaticDoSomething{
     }
 }
 
+class Dog {
+
+    public Dog() {
+    }
+
+    @Override
+    public String toString() {
+        return "Constructor reference: Woof!";
+    }
+}
 
 
