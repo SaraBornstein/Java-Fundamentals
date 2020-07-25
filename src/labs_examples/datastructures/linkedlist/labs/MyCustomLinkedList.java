@@ -31,6 +31,21 @@ public class MyCustomLinkedList<T> {
     private LinkedListNode<T> head; //keep track of the head
 
 //Add()
+public void add(T val){ //retyped on my own
+    //is there anything in the head? no? add
+    LinkedListNode newVal = new LinkedListNode(val);
+    if(head == null)
+        head = newVal;
+    //iterate through to end, add
+    else{
+        LinkedListNode iter = head;
+        while(iter.next != null){
+            iter = iter.next;
+        }
+        iter.next = newVal;
+    }
+}
+/*
    public void add(T val){
        LinkedListNode newVal = new LinkedListNode(val); //create a new element of type node, pass in value for that element
 
@@ -45,6 +60,7 @@ public class MyCustomLinkedList<T> {
        }
 
    }
+ */
 
 //delete()
     public void delete(T val){ //pass in a value
@@ -89,8 +105,32 @@ public class MyCustomLinkedList<T> {
        }
     }
 
-//Additional Method 1
-    
-//Additional Method 2
+//Additional Method 1: size
+    public int size(){
+        int count = 0;
+        if(head == null)
+            count = 0;
+        else{
+            LinkedListNode iter = head;
+            count = 1;
+            while(iter.next != null){
+                count++;
+                iter = iter.next;
+            }
+        }
+        return count;
+    }
 
+//Additional Method 2: clear
+    public void clear(){
+        if(head == null)
+            return;
+        else{
+            LinkedListNode iter = head;
+            //iter = iter.next;
+            while (iter.next != null){
+                iter.next = iter.next.next;
+            }
+        }
+    }
 }
