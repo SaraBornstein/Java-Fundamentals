@@ -18,31 +18,37 @@ public class CustomStack<T> {
         resize(); //call resize to check if array needs resizing
     }
 
-    //TODO: make it so no error occurs when you pop() an empty stack, throw a custom exception when trying to pop an element from an empty Stack
-    public T pop(){ //pop = remove the last element added to the array, in a stack last in, first out (in a queue pop and push from different ends)
-        T getOut = (T) myCustomStack[numElements-1]; //variable for element to remove (pop off) = last element (if you have 7 elements, the index # is 6)
-        myCustomStack[numElements] = null; //remove element by making it null
-        numElements--; //remove last element, decrease the numElements
-        return getOut; //return popped number
+    //make it so no error occurs when you pop() an empty stack, throw a custom exception when trying to pop an element from an empty Stack
+    public T pop() { //pop = remove the last element added to the array, in a stack last in, first out (in a queue pop and push from different ends)
+        try {
+            T getOut = (T) myCustomStack[numElements - 1]; //variable for element to remove (pop off) = last element (if you have 7 elements, the index # is 6)
+            myCustomStack[numElements] = null; //remove element by making it null
+            numElements--; //remove last element, decrease the numElements
+            return getOut; //return popped number
+
+        } catch (Exception exc) {
+            System.out.println("Can't pop from empty stack!");
+        }
+        return null;
     }
 
-    /*
-    resize array to be twice the size when the Stack is more than 3/4 full
-    resize array to be half the size when the Stack is more than 1/4 empty
-    */
-
-    //TODO: resize underlying array when necessary after each push() and pop()
+        //resize underlying array when necessary after each push() and pop()
     public void resize(){
+        Object[] old  = myCustomStack;
+        //resize array to be twice the size when the Stack is more than 3/4 full
         if(numElements > myCustomStack.length * .75){
-
+            Object[] resizedArr = new Object[old.length * 2];
+            for(int i = 0; i < numElements; i++){
+                old[i] = resizedArr[i];
+            }
         }
+        //resize array to be half the size when the Stack is more than 1/4 empty
         else if(numElements < myCustomStack.length * .25){
-
+            Object[] resizedArr = new Object[old.length / 2];
+            for(int i = 0; i < numElements; i++){
+                old[i] = resizedArr[i];
+            }
         }
-
-        //T old[] = myCustomStack;
-        //T resized[] = [old.length * 2];
-
     }
 
     //peekFirst()
