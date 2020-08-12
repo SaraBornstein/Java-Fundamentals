@@ -39,19 +39,19 @@ public class CustomStack<T> {
         if(numElements > old.length * .75){
             Object[] resizedArr = new Object[old.length * 2];
             for(int i = 0; i < numElements; i++){
-                old[i] = resizedArr[i];
+                resizedArr[i] = old[i];
             }
-            myCustomStack = resizedArr;
-            System.out.println("Array has been resized to twice the size. Array length: " + resizedArr.length);
+            myCustomStack  = resizedArr;
+            System.out.println("Array has been resized to twice the size. Array length: " + myCustomStack.length);
         }
         //resize array to be half the size when the Stack is more than 1/4 empty
         else if(numElements < old.length * .25){
             Object[] resizedArr = new Object[old.length / 2];
             for(int i = 0; i < numElements; i++){
-                old[i] = resizedArr[i];
+                resizedArr[i] = old[i];
             }
             myCustomStack = resizedArr;
-            System.out.println("Array has been resized to half the size. Array length: " + resizedArr.length);
+            System.out.println("Array has been resized to half the size. Array length: " + myCustomStack.length);
         }
         else{
             return;
