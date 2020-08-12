@@ -28,26 +28,33 @@ public class CustomStack<T> {
 
         } catch (Exception exc) {
             System.out.println("Can't pop from empty stack!");
+            return null;
         }
-        return null;
     }
 
         //resize underlying array when necessary after each push() and pop()
     public void resize(){
         Object[] old  = myCustomStack;
         //resize array to be twice the size when the Stack is more than 3/4 full
-        if(numElements > myCustomStack.length * .75){
+        if(numElements > old.length * .75){
             Object[] resizedArr = new Object[old.length * 2];
             for(int i = 0; i < numElements; i++){
                 old[i] = resizedArr[i];
             }
+            myCustomStack = resizedArr;
+            System.out.println("Array has been resized to twice the size. Array length: " + resizedArr.length);
         }
         //resize array to be half the size when the Stack is more than 1/4 empty
-        else if(numElements < myCustomStack.length * .25){
+        else if(numElements < old.length * .25){
             Object[] resizedArr = new Object[old.length / 2];
             for(int i = 0; i < numElements; i++){
                 old[i] = resizedArr[i];
             }
+            myCustomStack = resizedArr;
+            System.out.println("Array has been resized to half the size. Array length: " + resizedArr.length);
+        }
+        else{
+            return;
         }
     }
 
@@ -61,20 +68,15 @@ public class CustomStack<T> {
         return (T) myCustomStack[0];
     }
 
-    //size()
+    //length()
     public int length(){
         return  numElements;
     }
 
     //method to print out the data of all elements in the Stack
     public void print(){
-        System.out.println(myCustomStack.toString());
-        /*
-        for(int i = 0; i < myCustomStack.length; i++){
-            System.out.println(myCustomStack[i]);
+        for(int i = 0; i < numElements; i++){
+            System.out.print(myCustomStack[i] + " ");
         }
-
-         */
     }
-
 }

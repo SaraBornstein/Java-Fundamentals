@@ -6,13 +6,27 @@ public class CustomStackController {
 
         stack.add("One");
         stack.add("Two");
+        stack.add("Three");
+        stack.add("Four");
+        stack.add("Five");
 
-        String a = stack.pop();
-        String b = stack.pop();
-        String c = stack.pop();
+        stack.print();
+        System.out.println();
 
-        System.out.println(a);
-        System.out.println(b);
+        String pop = stack.pop();
+        System.out.println("Pop should return the last element added: " + pop);
+
+        stack.print();
+        System.out.println();
+
+        String peekFirst = stack.peekFirst();
+        System.out.println("peekFirst: " + peekFirst);
+        String peekLast = stack.peekLast();
+        System.out.println("peekLast: " + peekLast);
+
+        System.out.println("The stack has a length of: " + stack.length());
+
+
 
     }
 }
