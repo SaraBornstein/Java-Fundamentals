@@ -38,9 +38,9 @@ class HashMapExerciseOne {
         Abook BookThree = new Abook("TitleThree", "AuthorThree");
 
         //put() the objects into a HashMap
-        myBookHashMap.put("TitleOne", BookOne);
-        myBookHashMap.put("TitleTwo", BookTwo);
-        myBookHashMap.put("TitleThree", BookThree);
+        myBookHashMap.put(BookOne.getTitle(), BookOne);
+        myBookHashMap.put(BookTwo.getTitle(), BookTwo);
+        myBookHashMap.put(BookThree.getTitle(), BookThree);
 
         //get()
         Abook getAnElement = myBookHashMap.get("TitleOne");
