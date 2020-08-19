@@ -1,6 +1,5 @@
 package labs_examples.datastructures.hashmap.labs;
 
-import java.sql.Array;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.*;
@@ -144,34 +143,31 @@ class ExerciseThree{
 
     //4) create a HashMap
         Instant hashMapStart = Instant.now();
-        HashMap<String, Abook> aHashMap = new HashMap();
+        HashMap<Integer, Ball> ballHashMap = new HashMap();
 
     //1) add 100 elements
         Instant hashMapAddElementsStart = Instant.now();
         for(int i = 0; i < 100; i++){
-            Abook bookElement = new Abook("aTitle", "anAuthor");
-            aHashMap.put(bookElement.getTitle(), bookElement);
+            Ball ballObj = new Ball();
+            ballHashMap.put(i, ballObj);
         }
-
-        System.out.println(aHashMap);
-        System.out.println(aHashMap.size());
         Instant hashMapAddElementsEnd = Instant.now();
         System.out.println("HashMap add elements time: " + Duration.between(hashMapAddElementsStart, hashMapAddElementsEnd).toMillis());
 
+
     //2) update 100 elements
         Instant hashMapUpdateElementsStart = Instant.now();
-        Abook BookUpdate = new Abook("OtherTitle", "OtherAuthor");
+
         for(int i = 0; i < 100; i++) {
-            //aHashMap.replace();
+            Ball secondBallObj = new Ball();
+            ballHashMap.replace(i, secondBallObj);
         }
-        System.out.println(aHashMap);
-        System.out.println(aHashMap.size());
         Instant hashMapUpdateElementsEnd = Instant.now();
         System.out.println("HashMap Update Elements time: " + Duration.between(hashMapUpdateElementsStart, hashMapUpdateElementsEnd).toMillis());
 
     //3) search for 100 elements
         Instant hashMapSearchElementsStart = Instant.now();
-        if(aHashMap.size() == 100){
+        if(ballHashMap.size() == 100){
             System.out.println("true");
         } else {
             System.out.println("false");
@@ -181,9 +177,8 @@ class ExerciseThree{
 
         //4) delete 100 elements
         Instant hashMapDeleteElementsStart = Instant.now();
-        for(int i = 0; i < 100; i++) {
-            //aHashMap.remove("OtherTitle", BookUpdate);
-        }
+        for(int i = 0; i < 100; i++)
+            ballHashMap.remove(i);
         Instant hashMapDeleteElementsEnd = Instant.now();
         System.out.println("HashMap delete elements time: " + Duration.between(hashMapDeleteElementsStart, hashMapDeleteElementsEnd).toMillis());
 
