@@ -2,7 +2,7 @@ package labs_examples.datastructures.hashmap.labs;
 
 import java.util.function.BiConsumer;
 
-public class myBiConsumer implements BiConsumer<String, Abook> {
+public class MyBiConsumer implements BiConsumer<String, Abook> {
     public void accept(String k, Abook v)
     {
         System.out.print("Key = " + k);

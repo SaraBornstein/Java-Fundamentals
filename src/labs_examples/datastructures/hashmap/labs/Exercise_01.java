@@ -1,7 +1,5 @@
 package labs_examples.datastructures.hashmap.labs;
 
-import labs_examples.packages.examples.package_01.Book;
-
 import java.util.HashMap;
 import java.util.function.BiConsumer;
 
@@ -86,7 +84,7 @@ class HashMapExerciseOne {
         System.out.println("Was this item replaced? " + myBookHashMap.replace("TitleOne", BookFive, BookOne));
 
         //forEach()
-        BiConsumer<String, Abook> action = new myBiConsumer();
+        BiConsumer<String, Abook> action = new MyBiConsumer();
         myBookHashMap.forEach(action);
 
         //clear()

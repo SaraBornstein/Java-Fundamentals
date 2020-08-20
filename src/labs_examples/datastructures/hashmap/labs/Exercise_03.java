@@ -113,8 +113,9 @@ class ExerciseThree{
         Instant queueAddElementsStart = Instant.now();
         for(int i = 0; i < 100; i++){
             Ball ballObj = new Ball();
-            //ballQueue.add(ballObj); //TODO ???
+            ballQueue.add(ballObj); //TODO error cannot be cast to java.lang.Comparable???
         }
+        System.out.println(ballQueue.size());
         Instant queueAddElementsEnd = Instant.now();
         System.out.println("Queue add elements time: " + Duration.between(queueAddElementsStart, queueAddElementsEnd).toMillis());
 /*
